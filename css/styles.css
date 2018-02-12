@@ -80,9 +80,13 @@ aside {
   grid-column: 9 / span 2;
 }
 
+#logo {
+  font-family: 'Permanent Marker', cursive;
+}
 main h2 {
   margin-bottom: 20px;
 }
+
 main, .works, .site {
   width: 100%;
 }
