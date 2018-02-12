@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
-  background: #000;
+  background: #fff;
   color: blue;
 }
 
@@ -26,16 +26,18 @@ html {
 }
 
 header {
-  /* margin: 55px 25px 45px 25px; */
-  width: 80%;
+  width: 85%;
+  background: #fff;
+  -webkit-box-shadow: 2px 17px 25px rgb(220, 220, 220);
+  /* -moz-box-shadow:  1px 7px 25px rgb(0,0,0); */
   margin: 55px auto 45px auto;
   padding: 20px; 
   text-align: center;
-  border: 1px solid black;
 }
 
-h1 {
+header h1 {
   text-transform: uppercase;
+  color: black;
   margin-bottom: 5px;
 }
 h1, h2 {
