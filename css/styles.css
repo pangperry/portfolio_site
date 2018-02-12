@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 body {
@@ -9,6 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
+  background: #000;
+  color: blue;
 }
 
 html {
@@ -43,15 +46,20 @@ header h3 {
 }
 aside, main, .works, .description {
   display: grid;
-  width: 100%;
   justify-items: center;
   align-items: center;
+  text-align: center;
 }
 
 aside {
   grid-template-columns: repeat(12, 1fr);
   margin-bottom: 40px;
 }
+
+.pics, .description {
+  display: none;
+}
+
 .pic {
   width: 50px;
   height: 50px;
@@ -71,6 +79,9 @@ aside {
 main h2 {
   margin-bottom: 20px;
 }
+main, .works, .site {
+  width: 100%;
+}
 .works h2 {
   margin-bottom: 25px;
 }
@@ -79,9 +90,14 @@ main h2 {
 }
 
 .site1, .site2, .site3 {
-  border: 1px solid grey;
-  width: 70%;
-  /* height: auto; */
-  height: 140px;
-  margin-bottom: 20px;
+  margin: 0;
+}
+.site1 {
+  margin-bottom: -4px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin: 0;
 }
