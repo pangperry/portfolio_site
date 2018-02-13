@@ -33,11 +33,15 @@ html {
 
 header {
   width: 85%;
-  background: #fff;
+  background: #CCC314;
+  color: black;
   position: sticky;
   top: 0;
+  header: #0076B2;
   -webkit-box-shadow: 2px 17px 25px rgb(200, 220, 230);
-  /* -moz-box-shadow:  1px 7px 25px rgb(0,0,0); */
+  -moz-box-shadow:  2px 17px 25px rgb(200, 220, 230);
+  box-shadow: 2px 17px 25px rgb(180, 200, 210);
+
   margin: 55px auto 45px auto;
   border-radius: 2px;
   padding: 20px; 
@@ -51,7 +55,7 @@ header h1 {
   font-size: 46px;
   margin: 0 0 23px 0;
   text-transform: uppercase;
-  color: black;
+  /* color: black; */
   margin-bottom: 5px;
 }
 
