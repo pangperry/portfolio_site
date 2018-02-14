@@ -39,9 +39,9 @@ header {
   color: black;
   position: sticky;
   top: 0;
-  -webkit-box-shadow: 2px 17px 25px rgb(200, 220, 230);
-  -moz-box-shadow:  2px 17px 25px rgb(200, 220, 230);
-  box-shadow: 2px 17px 25px rgb(180, 200, 210);
+  -webkit-box-shadow: 2px 5px 25px rgb(200, 220, 230);
+  -moz-box-shadow:  2px 5px 25px rgb(200, 220, 230);
+  box-shadow: 2px 5px 25px rgb(180, 200, 210);
 
   margin: 55px auto 200px auto;
   border-radius: 2px;
@@ -222,9 +222,9 @@ h1, h3{
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
-	-webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 4px 48px 108px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 4px 48px 108px rgba(0, 0, 0, 0.1);
+	box-shadow:  4px 48px 108px rgba(0, 0, 0, 0.1);
 	height: 120px;
 	position: relative;
 	width: 350px;
