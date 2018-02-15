@@ -1,24 +1,19 @@
 * {
   padding: 0;
   margin: 0;
-  width: 100%;
 }
 
 body {
+  height: 100%;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
   --sky-color:rgb(222, 241, 250);
-
   background-color: var(--sky-color);
-  color: blue;
-}
-
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
+  color: black;
+  overscroll-behavior: contain;
 }
 
 *,
@@ -26,22 +21,16 @@ html {
 *:after {
   box-sizing: inherit;
 }
-.container {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-}
 
 header {
+  display: grid;
   width: 85%;
   background: #CCC314;
-  color: black;
   position: sticky;
   top: 0;
-  -webkit-box-shadow: 2px 5px 25px rgb(200, 220, 230);
-  -moz-box-shadow:  2px 5px 25px rgb(200, 220, 230);
-  box-shadow: 2px 5px 25px rgb(180, 200, 210);
+  -webkit-box-shadow: 2px 1px 1px rgb(200, 220, 230);
+  -moz-box-shadow:  2px 1px 1px rgb(200, 220, 230);
+  box-shadow: 2px 1px 1px   rgb(180, 200, 210);
 
   margin: 55px auto 200px auto;
   border-radius: 2px;
@@ -70,7 +59,7 @@ header h3 {
 }
 
 main h2 {
-  font-size: 16px;
+  font-size: 20px;
   color: black;
 }
 
@@ -86,7 +75,7 @@ aside {
   margin-bottom: 40px;
 }
 
-.pics, .description {
+#cube, .pics, .description {
   display: none;
 }
 
@@ -95,6 +84,7 @@ aside {
   height: 50px;
   background-color: blue;
 }
+
 .pic1 {
   grid-column: 3 / span 2;
 }
@@ -120,28 +110,22 @@ main, .works, .site {
   margin-bottom: 20px;
 }
 
-.site1, .site2, .site3 {
-  margin: 0;
-}
-.site1 {
-  margin-bottom: -4px;
-}
-
 img {
   width: 100%;
   height: auto;
   margin: 0;
+  margin-bottom: -4px;
 }
 
 /* clouds inspired by Mark Bowley https://codepen.io/Mark_Bowley/pen/xEbuI?editors=1100 */
 
-#logo {
+.logo {
   font-family: 'Grand Hotel', cursive;
   font-size: 70px;
   color: black;
 }
 
-#background-wrap {
+#clouds-wrap {
   bottom: 0;
 	left: 0;
 	padding-top: 50px;
@@ -157,7 +141,7 @@ h1, h3{
 
 @-webkit-keyframes animateCloud {
     0% {
-        margin-left: -1000px;
+        margin-left: -600px;
     }
     100% {
         margin-left: 100%;
@@ -166,7 +150,7 @@ h1, h3{
 
 @-moz-keyframes animateCloud {
     0% {
-        margin-left: -1000px;
+        margin-left: -600px;
     }
     100% {
         margin-left: 100%;
@@ -175,7 +159,7 @@ h1, h3{
 
 @keyframes animateCloud {
     0% {
-        margin-left: -1000px;
+        margin-left: -600px;
     }
     100% {
         margin-left: 100%;
@@ -258,3 +242,79 @@ h1, h3{
 	right: 50px;
 	top: -90px;
 }
+
+/* media queries */
+
+@media screen and (min-width: 425px) {
+  #clouds-wrap {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    background: var(--sky-color);
+    box-shadow: none;
+    z-index: 2;
+  }
+
+  header h1 {
+    font-weight: 600;
+  }
+
+  #cube {
+    text-align: center;
+    height: 200px;
+    width: 100px; 
+  }
+
+  main h2 {
+    margin: 95px 0 45px 0;
+  }
+
+  .description {
+    display: inherit;
+  }
+
+ .works {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "site1 desription1"
+      "description2 site2"
+      "site3 description3";
+    justify-items: center;
+    align-items: center;
+    text-align: start;
+    background: #fff;
+  }
+  .works img {
+    width: 80%;
+    height: auto;
+  }
+
+  .site1 {
+    grid-area: site1;
+  }
+
+  .site2 {
+    grid-area: site2;
+  }
+
+  .site3 {
+    grid-area: site3;
+  }
+
+  .description1 {
+    grid-area: description1;
+  }
+
+  .description2 {
+    grid-area: description2;
+  }
+  .description3 {
+    grid-area: description3;
+  }
+} 
