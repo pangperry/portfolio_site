@@ -5,6 +5,7 @@
 
 body {
   height: 100%;
+  min-width: 350px;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,13 +24,12 @@ body {
 }
 
 header {
-  display: grid;
   width: 85%;
   background: #CCC314;
   position: sticky;
   top: 0;
-  -webkit-box-shadow: 2px 1px 1px rgb(200, 220, 230);
-  -moz-box-shadow:  2px 1px 1px rgb(200, 220, 230);
+  -webkit-box-shadow: 2px 1px 1px rgb(180, 200, 210);
+  -moz-box-shadow:  2px 1px 1px rgb(180, 200, 210);
   box-shadow: 2px 1px 1px   rgb(180, 200, 210);
 
   margin: 55px auto 200px auto;
@@ -63,7 +63,7 @@ main h2 {
   color: black;
 }
 
-aside, main, .works, .description {
+header, aside, main, .works {
   display: grid;
   justify-items: center;
   align-items: center;
@@ -75,14 +75,13 @@ aside {
   margin-bottom: 40px;
 }
 
-#cube, .pics, .description {
+#cube, .pics, .d {
   display: none;
 }
 
 .pic {
   width: 50px;
   height: 50px;
-  background-color: blue;
 }
 
 .pic1 {
@@ -245,7 +244,7 @@ h1, h3{
 
 /* media queries */
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 700px) {
   #clouds-wrap {
     display: none;
   }
@@ -254,8 +253,7 @@ h1, h3{
     display: grid;
     width: 100%;
     height: 150px;
-    margin: 0;
-    background: var(--sky-color);
+    margin: 0 0 25px;
     box-shadow: none;
     z-index: 2;
   }
@@ -265,34 +263,54 @@ h1, h3{
   }
 
   #cube {
+    display: inherit;
     text-align: center;
-    height: 200px;
-    width: 100px; 
+    height: 225px;
+    width: 98%; 
+    /* box-shadow:  4px 48px 108px rgba(0, 0, 0, 0.1); */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    background: rgb(255,246,246);
+    z-index: 2;
+  }
+
+  body, header, main, .works {
+    background: linear-gradient(90deg, var(--sky-color),rgb(252, 254,255));
+  }
+
+  main {
+    height: 100%;
   }
 
   main h2 {
     margin: 95px 0 45px 0;
   }
 
-  .description {
-    display: inherit;
+  .d {
+    display: block;
   }
 
  .works {
-    margin-top: 20px;
+    margin-top: 60px;
+    height: 100%;
+    width: 90%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "site1 desription1"
-      "description2 site2"
-      "site3 description3";
-    justify-items: center;
-    align-items: center;
-    text-align: start;
-    background: #fff;
+    grid-template-areas: "name1 site1"
+      "site2 name2"
+      "name3 site3";
   }
-  .works img {
-    width: 80%;
-    height: auto;
+  /* .works h4 {
+    box-shadow: 1px 1px 1px  rgb(180, 200, 210);
+  } */
+
+  .site img {
+    width: 95%;
+    height: 95%;
+    /* -webkit-box-shadow: 2px 0 0 rgb(200, 220, 230); */
+    /* -moz-box-shadow:  2px 0 0 rgb(200, 220, 230); */
+    box-shadow: 1px 0 0  rgb(180, 200, 210);
+  }
+  .site2 img {
+    box-shadow: 9px 34px 39px rgb(170, 170, 170);
   }
 
   .site1 {
@@ -300,6 +318,7 @@ h1, h3{
   }
 
   .site2 {
+    z-index: 3;
     grid-area: site2;
   }
 
@@ -308,13 +327,16 @@ h1, h3{
   }
 
   .description1 {
-    grid-area: description1;
+    grid-area: name1;
+    text-align: right;
   }
 
   .description2 {
-    grid-area: description2;
+    grid-area: name2; 
+    text-align: left;
   }
   .description3 {
-    grid-area: description3;
-  }
+    grid-area: name3;
+    text-align: right;
+  } 
 } 
