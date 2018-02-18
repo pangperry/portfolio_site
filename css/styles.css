@@ -4,17 +4,19 @@
 }
 
 body {
+  position: relative; /* just added */
   height: 100%;
-  min-width: 350px;
+  min-width: 400px;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
   --sky-color:rgb(222, 241, 250);
-  background-color: var(--sky-color);
+  background: #fff;
   color: black;
   overscroll-behavior: contain;
+  z-index: 1;
 }
 
 *,
@@ -24,18 +26,20 @@ body {
 }
 
 header {
-  width: 85%;
+  width: 75%;
+  min-width: 380px;
+  max-width: 450px;
   background: #CCC314;
   position: sticky;
   top: 0;
   -webkit-box-shadow: 2px 1px 1px rgb(180, 200, 210);
   -moz-box-shadow:  2px 1px 1px rgb(180, 200, 210);
-  box-shadow: 2px 1px 1px   rgb(180, 200, 210);
-
+  box-shadow: 2px 1px 1px  rgb(180, 200, 210);
   margin: 55px auto 200px auto;
   border-radius: 2px;
   padding: 20px; 
   text-align: center;
+  z-index: 8;
 }
 
 header h1 {
@@ -53,6 +57,7 @@ header h3, main h2 {
   line-height: 23px;
   margin: 0 0 10px 0;
 }
+
 header h3 {
   margin-top: 15px;
   font-size: 23px;
@@ -75,10 +80,6 @@ aside {
   margin-bottom: 40px;
 }
 
-#cube, .pics, .d {
-  display: none;
-}
-
 .pic {
   width: 50px;
   height: 50px;
@@ -95,6 +96,10 @@ aside {
   grid-column: 9 / span 2;
 }
 
+main {
+  background: #fff;
+  z-index: 3;
+}
 main h2 {
   margin-bottom: 20px;
 }
@@ -102,11 +107,19 @@ main h2 {
 main, .works, .site {
   width: 100%;
 }
-.works h2 {
-  margin-bottom: 25px;
+
+.works {
+  z-index: 3;
+  background: #fff;
 }
+
+.works h4 {
+  margin: 35px 0 20px 0;
+  font-size: 25px;
+}
+
 .works p {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 img {
@@ -114,7 +127,11 @@ img {
   height: auto;
   margin: 0;
   margin-bottom: -4px;
-}
+  -webkit-box-shadow: 2px 1px 1px rgb(100, 100, 100);
+  -moz-box-shadow:  2px 1px 1px rgb(100, 100, 100);
+  box-shadow: 4px 4px 10px   rgb(100, 100, 100);
+} 
+
 
 /* clouds inspired by Mark Bowley https://codepen.io/Mark_Bowley/pen/xEbuI?editors=1100 */
 
@@ -131,12 +148,15 @@ img {
 	position: fixed;
 	right: 0;
 	top: 0;
-	z-index: 1;
+  z-index: 2;
+  background: var(--sky-color);
 }
+
 h1, h3{
   text-align: center;
 }
-/* KEYFRAMES */
+
+/* cloud KEYFRAMES */
 
 @-webkit-keyframes animateCloud {
     0% {
@@ -175,6 +195,7 @@ h1, h3{
 	-moz-transform: scale(0.5);
 	transform: scale(0.5);
 }
+
 .c2 {
 	-webkit-animation: animateCloud 7s linear infinite;
 	-moz-animation: animateCloud 7s linear infinite;
@@ -183,6 +204,7 @@ h1, h3{
 	-moz-transform: scale(0.4);
 	transform: scale(0.4);
 }
+
 .c3 {
 	-webkit-animation: animateCloud 15s linear infinite;
 	-moz-animation: animateCloud 15s linear infinite;
@@ -195,13 +217,14 @@ h1, h3{
 
 
 .cloud {
-	background: #fff;
-	background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
-	background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
-	background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
-	background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
-	background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	/* background: #fff; */
+  /* background: -moz-linear-gradient(top,  #fff 10%, #f1f1f1 100%); */
+	/* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#f1f1f1));*/
+	background: -webkit-linear-gradient(top,  #fff 0%,#f1f1f1 100%);
+	background: -o-linear-gradient(top,  #fff 0%,#f1f1f1 100%);
+	background: -ms-linear-gradient(top,  #fff 0%,#f1f1f1 100%);
+  background: linear-gradient(top,  #fff 0%,#f1f1f1 100%);
+
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
@@ -210,7 +233,7 @@ h1, h3{
 	box-shadow:  4px 48px 108px rgba(0, 0, 0, 0.1);
 	height: 120px;
 	position: relative;
-	width: 350px;
+  width: 350px;
 }
 
 .cloud:after, .cloud:before {
@@ -224,7 +247,6 @@ h1, h3{
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
-
 	height: 100px;
 	left: 50px;
 	top: -50px;
@@ -235,7 +257,6 @@ h1, h3{
 	-webkit-border-radius: 200px;
 	-moz-border-radius: 200px;
 	border-radius: 200px;
-
 	width: 180px;
 	height: 180px;
 	right: 50px;
@@ -245,36 +266,53 @@ h1, h3{
 /* media queries */
 
 @media screen and (min-width: 700px) {
-  #clouds-wrap {
-    display: none;
+  body, header, #clouds-wrap {
+    background: rgba(20, 20,20, 0); 
   }
-
   header {
+    max-width: 100%;
     display: grid;
     width: 100%;
-    height: 150px;
-    margin: 0 0 25px;
+    height: 170px;
+    margin: 0 0 35px 0;
     box-shadow: none;
-    z-index: 2;
+    z-index: 5;
+    background: rgb(177,192, 199);
+    /* box-shadow:  1px 1px 25px rgba(109,118, 122); */
+    box-shadow:  1px 1px 5px rgba(109,118, 122);
+    /* box-shadow:  1px 1px 5px rgb(50,50,50); */
   }
 
   header h1 {
     font-weight: 600;
   }
 
-  #cube {
-    display: inherit;
-    text-align: center;
-    height: 225px;
-    width: 98%; 
-    /* box-shadow:  4px 48px 108px rgba(0, 0, 0, 0.1); */
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    background: rgb(255,246,246);
-    z-index: 2;
+  header h3 {
+    margin: 5px 0 35px 0;
   }
 
-  body, header, main, .works {
-    background: linear-gradient(90deg, var(--sky-color),rgb(252, 254,255));
+  #clouds-wrap {
+    position: fixed;
+    top: 155px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    z-index: 5;
+  }
+
+  .c1, .c2, .c3 {
+    animation: none;
+  } 
+
+  .c1, .c2 {
+    display: none;
+  }
+
+  .cloud, .cloud:after, .cloud:before {
+    background: var(--sky-color);
+    box-shadow:  4px 48px 108px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
   }
 
   main {
@@ -289,7 +327,7 @@ h1, h3{
     display: block;
   }
 
- .works {
+  .works {
     margin-top: 60px;
     height: 100%;
     width: 90%;
@@ -298,19 +336,14 @@ h1, h3{
       "site2 name2"
       "name3 site3";
   }
-  /* .works h4 {
-    box-shadow: 1px 1px 1px  rgb(180, 200, 210);
-  } */
+  
+  .site img {
+    box-shadow: 9px 34px 39px rgb(170, 170, 170);
+  }
 
   .site img {
     width: 95%;
     height: 95%;
-    /* -webkit-box-shadow: 2px 0 0 rgb(200, 220, 230); */
-    /* -moz-box-shadow:  2px 0 0 rgb(200, 220, 230); */
-    box-shadow: 1px 0 0  rgb(180, 200, 210);
-  }
-  .site2 img {
-    box-shadow: 9px 34px 39px rgb(170, 170, 170);
   }
 
   .site1 {
@@ -318,7 +351,6 @@ h1, h3{
   }
 
   .site2 {
-    z-index: 3;
     grid-area: site2;
   }
 
@@ -335,8 +367,9 @@ h1, h3{
     grid-area: name2; 
     text-align: left;
   }
+
   .description3 {
     grid-area: name3;
     text-align: right;
-  } 
-} 
+  }
+}
