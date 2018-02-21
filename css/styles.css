@@ -4,16 +4,17 @@
 }
 
 body {
-  position: relative; /* just added */
+  position: relative; 
   margin: 0 auto;
+  font: lighter 18px/24px 'Lato', sans-serif;
+  color: black;
   height: 100%;
   width: 100%;
-  min-width: 400px;
+  min-width: 360px;
   max-width: 850px;
   box-sizing: border-box;
   --sky-color:rgb(222, 241, 250);
   background: #fff;
-  color: black;
   overscroll-behavior: contain;
   z-index: 1;
 }
@@ -25,44 +26,39 @@ body {
 }
 
 header {
-  width: 75%;
-  min-width: 380px;
-  max-width: 450px;
+  width: 95%;
+  max-width: 500px;
   background: #CCC314;
   position: sticky;
   top: 0;
   -webkit-box-shadow: 2px 1px 1px rgb(180, 200, 210);
   -moz-box-shadow:  2px 1px 1px rgb(180, 200, 210);
   box-shadow: 2px 1px 1px  rgb(180, 200, 210);
-  margin: 75px auto 95px auto;
+  margin: 55px auto 121px auto;
   border-radius: 2px;
-  padding: 20px; 
+  padding: 20px 0;
   text-align: center;
   z-index: 8;
 }
 
 header h1 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  line-height: 46px;
-  font-size: 46px;
-  margin: 35px 0 25px 0;
+  line-height: 1.2em;
+  font-size: 2.5em;
+  margin: 35px auto 25px auto;
   text-transform: uppercase;
 }
 
 header h3, main h2  {
-  font-family: 'Lato', sans-serif;
-  line-height: 1.3em;
-  margin: 0 0 10px 0;
+  line-height: 1.2em;
+  margin: 0 0 15px 0;
 }
 
 header h3 {
-  margin-top: 15px;
-  font-size: 23px;
+  font-size: 1.3em;
 }
 
 main h2 {
-  font-size: 20px;
+  font-size: 1.3em;
   color: black;
   z-index: 2;
 }
@@ -78,6 +74,7 @@ main {
   background: #fff;
   z-index: 3;
 }
+
 main h2 {
   margin-bottom: 20px;
 }
@@ -93,7 +90,7 @@ main, .works, .site {
 
 .works h4 {
   margin: 35px 0 20px 0;
-  font-size: 25px;
+  font-size: 1.2em; 
 }
 
 .works p {
@@ -110,13 +107,13 @@ img {
   box-shadow: 1px 1px 5px   rgb(100, 100, 100);
 } 
 
-
 /* clouds inspired by Mark Bowley https://codepen.io/Mark_Bowley/pen/xEbuI?editors=1100 */
 
 .logo {
   font-family: 'Grand Hotel', cursive;
   font-size: 70px;
   color: black;
+  padding-top: 23px;
 }
 
 #clouds-wrap {
@@ -195,14 +192,7 @@ h1, h3{
 /* CLOUD OBJECTS */
 
 .cloud {
-	/* background: #fff; */
-  /* background: -moz-linear-gradient(top,  #fff 10%, #f1f1f1 100%); */
-	/* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#f1f1f1));*/
-	background: -webkit-linear-gradient(top,  #fff 0%,#f1f1f1 100%);
-	background: -o-linear-gradient(top,  #fff 0%,#f1f1f1 100%);
-	background: -ms-linear-gradient(top,  #fff 0%,#f1f1f1 100%);
-  background: linear-gradient(top,  #fff 0%,#f1f1f1 100%);
-
+	background: #fff;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
@@ -294,17 +284,15 @@ h1, h3{
   }
 
   main {
+    max-width: 100%;
     padding: 0 25px;
   }
 
   main h2 {
-    font-size: 30px;
+    font-size: 2.1m;
     margin: 30px 0 54px 0; 
   }
 
-  .d {
-    display: block;
-  }
 
   .works {
     margin: 60px auto 0 auto;
@@ -324,11 +312,16 @@ h1, h3{
    
   .site img {
     box-shadow: 9px 34px 39px rgb(170, 170, 170);
-  }
-
-  .site img {
     width: 95%;
     height: 95%;
+  }
+
+  .description, .site {
+    min-width: 0;
+  }
+
+  .site1 img {
+    box-shadow: 0 0 0 rgb(170, 170, 170);
   }
 
   .site1 {
@@ -413,7 +406,7 @@ h1, h3{
   }
 
   main h2 {
-    font-size: 23px;
+    font-size: 1.2em;
     text-align: left;
     max-width: 100%;
     margin: 0 0 10px 0;
@@ -422,7 +415,7 @@ h1, h3{
 
   .c3 {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: -97px;
     z-index: 6;
     transform: scale(0.4);
