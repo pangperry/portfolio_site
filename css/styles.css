@@ -297,9 +297,13 @@ h1, h3{
     margin: 0 auto;
   }
 
+  main {
+    padding: 0 25px;
+  }
+
   main h2 {
     font-size: 30px;
-    margin: 0 0 54px 0; 
+    margin: 30px 0 54px 0; 
   }
 
   .d {
@@ -404,6 +408,7 @@ h1, h3{
     width: 100%;
     height: auto;
     margin: 0;
+    padding: 0;
   }
 
   main h2 {
@@ -462,7 +467,7 @@ h1, h3{
 
   .works h4 {
     font-size: 20px;
-    margin: 0 0 0 0;
+    margin: 0;
   }
   .works p {
     width: 100%;
